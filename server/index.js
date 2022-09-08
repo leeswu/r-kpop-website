@@ -10,7 +10,7 @@ dotenv.config()
 const app = express();
 
 var corsOptions = {
-    origin: ['https://r-kpop-stats.netlify.app/'],
+    origin: ['https://r-kpop-stats.netlify.app'],
     credentials: true,
 };
 
