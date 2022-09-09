@@ -9,12 +9,12 @@ dotenv.config()
 
 const app = express();
 
-var corsOptions = {
-    origin: ['https://r-kpop-server.onrender.com/charts/1Team'],
-    credentials: true,
-};
+// var corsOptions = {
+//     origin: ['https://r-kpop-server.onrender.com/charts/1Team'],
+//     credentials: true,
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use('/data', dataRoutes);
 
