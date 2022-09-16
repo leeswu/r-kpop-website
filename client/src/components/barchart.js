@@ -3,6 +3,8 @@ import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
 import { Chart as ChartJS } from 'chart.js/auto';
 import { Chart } from 'chart.js';
+import './barchart.css';
+import colors from './colors.json';
 
 import zoomPlugin from "chartjs-plugin-zoom";
 Chart.register(zoomPlugin); // REGISTER PLUGIN
@@ -16,9 +18,9 @@ class BarChart extends React.Component {
                 labels: [],
                 datasets: [
                     {
-                        label: "Upvotes",
-                        backgroundColor: 'rgba(75,256,192,1)',
-                        borderColor: 'rgba(0,0,0,1)',
+                        label: "Number of Posts",
+                        // backgroundColor: 'red',
+                        // borderColor: 'rgba(0,0,0,1)',
                         data: [],
                         barPercentage: 1,
                         categoryPercentage: 1,
@@ -26,6 +28,21 @@ class BarChart extends React.Component {
                 ]
             },
             options: {
+
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Number of Posts'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Number of Upvotes'
+                        }
+                    }
+                },
                 plugins: {
                     zoom: {
                         limits: {
@@ -63,13 +80,14 @@ class BarChart extends React.Component {
             for (let i = 0; i <= data.length; i++) {
                 labels.push(i)
             }
+            const color = colors[Math.floor(Math.random() * colors.length)];
 
             const newData = {
                 labels: labels,
                 datasets: [
                     {
                         label: 'Number of Posts',
-                        backgroundColor: 'blue',
+                        backgroundColor: color,
                         borderColor: 'rgba(0,0,0,1)',
                         data: data
                     }
@@ -81,7 +99,7 @@ class BarChart extends React.Component {
 
     render() {
         return <div>
-            {this.props.group} <br />
+            <h1 className='group'>{this.props.group}</h1> <br />
             {this.state.test}
             <Bar data={this.state.data} options={this.state.options} />
         </div>;
