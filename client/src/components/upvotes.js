@@ -7,7 +7,7 @@ import { Chart } from 'chart.js';
 import zoomPlugin from "chartjs-plugin-zoom";
 Chart.register(zoomPlugin); // REGISTER PLUGIN
 
-class BarChart extends React.Component {
+class Upvotes extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -50,8 +50,14 @@ class BarChart extends React.Component {
 
     componentDidMount() {
         this.fetchData();
-
+        this.fetchComments();
     }
+
+    fetchComments = () => {
+        axios.get(`/data/${this.props.group}/comments`).then((response) => {
+            console.log(response.data);
+        }).catch((error) => console.log(error));
+    };
 
     fetchData = () => {
         axios.get(`/data/${this.props.group}`).then((response) => {
@@ -89,4 +95,4 @@ class BarChart extends React.Component {
 
 }
 
-export default BarChart;
+export default Upvotes;

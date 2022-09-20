@@ -1,5 +1,5 @@
 import React from 'react';
-import BarChart from './barchart';
+import Upvotes from './upvotes';
 import {useParams} from 'react-router-dom';
 
 function Charts() {
@@ -7,7 +7,7 @@ function Charts() {
     const groupName = params.groupName;
     return (
         <div>
-            <BarChart group={groupName}/>
+            <Upvotes group={groupName}/>
         </div>
         );
 }
