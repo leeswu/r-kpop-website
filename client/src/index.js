@@ -4,7 +4,7 @@ import App from './App';
 import {BrowserRouter} from 'react-router-dom';
 import axios from 'axios';
 
-// axios.defaults.baseURL = 'https://r-kpop-server.onrender.com'
+axios.defaults.baseURL = 'https://r-kpop-server.onrender.com'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
