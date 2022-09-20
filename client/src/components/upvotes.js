@@ -7,7 +7,7 @@ import { Chart } from 'chart.js';
 import zoomPlugin from "chartjs-plugin-zoom";
 Chart.register(zoomPlugin); // REGISTER PLUGIN
 
-class Upvotes extends React.Component {
+class BarChart extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -95,4 +95,4 @@ class Upvotes extends React.Component {
 
 }
 
-export default Upvotes;
+export default BarChart;
