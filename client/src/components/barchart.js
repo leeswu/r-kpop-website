@@ -19,8 +19,6 @@ class BarChart extends React.Component {
                 datasets: [
                     {
                         label: "Number of Posts",
-                        // backgroundColor: 'red',
-                        // borderColor: 'rgba(0,0,0,1)',
                         data: [],
                         barPercentage: 1,
                         categoryPercentage: 1,
@@ -71,10 +69,10 @@ class BarChart extends React.Component {
     }
 
     fetchData = () => {
-        axios.get(`/data/${this.props.group}`).then((response) => {
+        axios.get(`/data/${this.props.group}/scores`).then((response) => {
             let labels = [];
 
-            const data = response.data.Scores
+            const data = response.data
             console.log(response.data)
 
             for (let i = 0; i <= data.length; i++) {
