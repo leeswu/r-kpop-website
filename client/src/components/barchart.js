@@ -19,8 +19,6 @@ class BarChart extends React.Component {
                 datasets: [
                     {
                         label: "Number of Posts",
-                        // backgroundColor: 'red',
-                        // borderColor: 'rgba(0,0,0,1)',
                         data: [],
                         barPercentage: 1,
                         categoryPercentage: 1,
