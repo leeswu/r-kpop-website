@@ -8,7 +8,7 @@ const groupSchema = mongoose.Schema({
     Edited: Number,
     'Link Flairs': [{LinkFlair: String, Count: Number}],
     Locked: Number,
-    NumComments: [Number],
+    'Num Comments': [Number],
     'Num Posts': Number,
     Original: Number, 
     Scores: [Number],

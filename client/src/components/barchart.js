@@ -69,10 +69,10 @@ class BarChart extends React.Component {
     }
 
     fetchData = () => {
-        axios.get(`/data/${this.props.group}`).then((response) => {
+        axios.get(`/data/${this.props.group}/scores`).then((response) => {
             let labels = [];
 
-            const data = response.data.Scores
+            const data = response.data
             console.log(response.data)
 
             for (let i = 0; i <= data.length; i++) {

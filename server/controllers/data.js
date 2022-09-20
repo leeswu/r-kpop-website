@@ -20,7 +20,6 @@ export const getGroup = async (req, res)=> {
         console.log(data);
     } catch (err) {
         console.log(err.message);
-        console.log("in catch block");
         res.status(404).json({message: err.message});
     }
 }
@@ -33,7 +32,18 @@ export const getComments = async (req, res)=> {
         console.log(data);
     } catch (err) {
         console.log(err.message);
-        console.log("in catch block");
+        res.status(404).json({message: err.message});
+    }
+}
+
+export const getScores = async (req, res)=> {
+    try {
+        const group = req.params.group;
+        const data = await GroupData.findOne({Name: group}, ['Scores']);
+        res.status(200).json(data['Scores']);
+        console.log(data);
+    } catch (err) {
+        console.log(err.message);
         res.status(404).json({message: err.message});
     }
 }
