@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SearchBar from './searchbar'
 import Introduction from './introduction';
 import { Card } from '@mui/material';

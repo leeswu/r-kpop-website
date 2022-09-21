@@ -3,7 +3,6 @@ import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
 import { Chart as ChartJS } from 'chart.js/auto';
 import { Chart } from 'chart.js';
-// import './barchart.css';
 import colors from './colors.json';
 
 import zoomPlugin from "chartjs-plugin-zoom";

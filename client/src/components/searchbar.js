@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextField, Card } from '@mui/material'
+import { TextField} from '@mui/material'
 import SearchResults from './searchResults';
 
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import kpoplogo from './r-kpop-icon.png';
 import githublogo from './GitHub-Mark-120px-plus.png'
 import { Card } from "@mui/material";
