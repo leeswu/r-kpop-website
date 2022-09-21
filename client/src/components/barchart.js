@@ -3,7 +3,6 @@ import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
 import { Chart as ChartJS } from 'chart.js/auto';
 import { Chart } from 'chart.js';
-import './barchart.css';
 import colors from './colors.json';
 
 import zoomPlugin from "chartjs-plugin-zoom";
@@ -37,7 +36,7 @@ class BarChart extends React.Component {
                     x: {
                         title: {
                             display: true,
-                            text: 'Number of Upvotes'
+                            text: 'Number of Comments'
                         }
                     }
                 },
@@ -64,12 +63,20 @@ class BarChart extends React.Component {
     }
 
     componentDidMount() {
-        this.fetchData();
+        console.log(this.props.stat);
+        this.fetchData(this.props.stat);
 
     }
 
-    fetchData = () => {
-        axios.get(`/data/${this.props.group}/scores`).then((response) => {
+    componentDidUpdate(prevProps) {
+        console.log(this.props.stat);
+        if (this.props.stat !== prevProps.stat) {
+            this.fetchData(this.props.stat);
+        }
+    }
+
+    fetchData = (stat) => {
+        axios.get(`/data/${this.props.group}/${stat}`).then((response) => {
             let labels = [];
 
             const data = response.data
@@ -91,13 +98,57 @@ class BarChart extends React.Component {
                     }
                 ]
             }
-            this.setState({ data: newData });
+
+            const title = this.props.stat === 'Scores' ? 'Upvotes' : 'Comments';
+
+            const newOptions = {
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Number of Posts'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Number of ' + title
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: title,
+                        font: {
+                            size: 20
+                        }
+                    },
+                    zoom: {
+                        limits: {
+                            y: { min: 0 }
+                        },
+                        zoom: {
+                            wheel: {
+                                enabled: true,
+                            },
+                            pinch: {
+                                enabled: true
+                            },
+                            mode: 'xy',
+                        },
+
+                        pan: { enabled: true }
+                    }
+                }
+            }
+
+            this.setState({ data: newData, options: newOptions });
         }).catch((error) => console.log(error));
     };
 
     render() {
         return <div>
-            <h1 className='group'>{this.props.group}</h1> <br />
             {this.state.test}
             <Bar data={this.state.data} options={this.state.options} />
         </div>;
