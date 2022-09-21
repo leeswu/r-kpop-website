@@ -1,7 +1,7 @@
 import React from 'react';
 import Groups from "../groups.json";
 import { List, ListItem, ListItemText, Card } from "@mui/material";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function SearchResults(props) {
     const filteredData = Groups.filter((item) => {
@@ -17,12 +17,15 @@ function SearchResults(props) {
 
 
     return (
-        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', overflow: 'auto'}}>
             {filteredData.map((item) => (
                 <Card variant="outlined" key={item}>
                     <Link to={`/charts/${item}`}>
                         <ListItem>
-                            <ListItemText primary={item} />
+                            <ListItemText
+                                primaryTypographyProps={{ fontFamily: 'Poppins' }}
+                                primary={item}
+                            />
                         </ListItem>
                     </Link>
                 </Card>

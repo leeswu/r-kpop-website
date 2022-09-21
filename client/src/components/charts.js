@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import BarChart from './barchart';
 import { Button } from '@mui/material';
 import { useParams } from 'react-router-dom';
-// import HomeIcon from '@mui/icons-material/Home';
+import { Home } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 import "./charts.css"
 
 function Charts() {
@@ -18,8 +19,8 @@ function Charts() {
 
     return (
         <div>
+            <Link to="/"><Home /></Link>
             <h1 className='group'>{groupName}</h1> <br />
-            {/* <HomeIcon/> */}
             <div className='buttons'>
                 <Button variant="outlined"
                     onClick={() => { updateStat("Comments") }}>Comments</Button>
