@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,500;1,600&display=swap');
+
+.homepage {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Poppins', sans-serif;
+}
+
+.intro {
+    margin-left: 100px;
+    margin-top: 200px;
+    flex-basis: 800px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /* margin: 10px; */
+}
+
+/* h1 {
+    margin-top: 35px;
+} */
+
+/* .intro-title {
+    display: flex;
+    flex-direction: row;
+} */

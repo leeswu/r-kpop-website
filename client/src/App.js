@@ -1,14 +1,13 @@
 import React from 'react';
 import Charts from './components/charts';
-import SearchBar from './components/searchbar';
+import Homepage from './components/homepage';
 import {Routes, Route} from 'react-router-dom';
-
 
 class App extends React.Component {
   render() {
     return (
       <Routes>
-        <Route path='/' element={<SearchBar/>}/>
+        <Route path='/' element={<Homepage/>}/>
         <Route path='charts/:groupName' element={<Charts/>}/>
       </Routes>
     );
@@ -16,3 +15,4 @@ class App extends React.Component {
 }
 
 export default App;
+
