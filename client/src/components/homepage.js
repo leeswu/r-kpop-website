@@ -7,7 +7,7 @@ import './homepage.css'
 function Homepage() {
   return (
     <div className='homepage'>
-      <Card className='search' elevation='4' style={{overflow: 'auto'}}>
+      <Card className='search' elevation={4} style={{overflow: 'auto'}}>
         <SearchBar />
       </Card>
       <div className='intro'><Introduction /></div>
