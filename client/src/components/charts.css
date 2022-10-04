@@ -9,3 +9,13 @@
 .buttons {
     text-align: center;
 }
+
+.container {
+    background-color: white;
+    margin: 1vh;
+    border-radius: 10px;
+}
+
+.home {
+    margin: 10px;
+}

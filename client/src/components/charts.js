@@ -18,8 +18,8 @@ function Charts() {
     }
 
     return (
-        <div>
-            <Link to="/"><Home /></Link>
+        <div className="container">
+            <Link to="/"><Home className='home'/></Link>
             <h1 className='group'>{groupName}</h1> <br />
             <div className='buttons'>
                 <Button variant="outlined"
