@@ -18,8 +18,8 @@ function Charts() {
     }
 
     return (
-        <div className="container">
-            <Link to="/"><Home className='home'/></Link>
+        <div className="container" elevation={4}>
+            <Link to="/"><Home className='home' /></Link>
             <h1 className='group'>{groupName}</h1> <br />
             <div className='buttons'>
                 <Button variant="outlined"
@@ -27,7 +27,9 @@ function Charts() {
                 <Button variant="outlined"
                     onClick={() => { updateStat("Scores") }}>Upvotes</Button>
             </div>
-            <BarChart group={groupName} stat={state.stat} />
+            <div className='bar-container' >
+                <BarChart group={groupName} stat={state.stat} />
+            </div>
         </div>
     );
 }

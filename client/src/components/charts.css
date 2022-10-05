@@ -4,6 +4,7 @@
     font-family: 'Poppins', sans-serif;
     text-align: center;
     margin: 0px;
+    padding: 0px;
 }
 
 .buttons {
@@ -12,8 +13,16 @@
 
 .container {
     background-color: white;
-    margin: 1vh;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin: auto;
+}
+
+.bar-container {
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 .home {
